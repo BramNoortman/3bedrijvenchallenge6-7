@@ -10,10 +10,21 @@ public class Sprite2D
 {
         public Vector2 postition = null;
         public Vector2 Scale = null;
-        public string Directory = "";
+        public string Directory = "Sprites/Characters/correct/character_0001";
         public string Tag = "";
         public Bitmap Sprite = null;
-     public Sprite2D(Vector2 postition, Vector2 scale, string Directory, string tag)
+        private Vector2 vector21;
+        private Vector2 vector22;
+        private string v;
+
+        public Sprite2D(Vector2 vector21, Vector2 vector22, string v)
+        {
+            this.vector21 = vector21;
+            this.vector22 = vector22;
+            this.v = v;
+        }
+
+        public Sprite2D(Vector2 postition, Vector2 scale, string Directory, string tag)
         {  
         this.postition = postition;
         this.Scale = scale;

@@ -289,5 +289,10 @@
     <Content Include="Sprites\Tiles\tile_0178.png" />
     <Content Include="Sprites\Tiles\tile_0179.png" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExpressedEngine\ExpressedEngine.resx">
+      <DependentUpon>ExpressedEngine.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
