@@ -50,6 +50,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ExpressedEngine\Log.cs" />
+    <Compile Include="ExpressedEngine\NuggieShape1.cs" />
     <Compile Include="ExpressedEngine\Shape2D.cs" />
     <Compile Include="ExpressedEngine\Sprite2D.cs" />
     <Compile Include="ExpressedEngine\Vector2.cs" />
@@ -288,6 +289,11 @@
     <Content Include="Sprites\Tiles\tile_0177.png" />
     <Content Include="Sprites\Tiles\tile_0178.png" />
     <Content Include="Sprites\Tiles\tile_0179.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExpressedEngine\ExpressedEngine.resx">
+      <DependentUpon>ExpressedEngine.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

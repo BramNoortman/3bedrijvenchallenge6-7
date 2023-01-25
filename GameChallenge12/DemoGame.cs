@@ -12,6 +12,7 @@ namespace ExpressedEngine
     class DemoGame : ExpressedEngine.ExpressedEngine
     {
         Shape2D Player1;
+        NuggieShape Nuggie1;
 
         bool left;
         bool right;
@@ -22,9 +23,10 @@ namespace ExpressedEngine
 
         public override void Onload()
         {
-            BackgroundColour = Color.Black;
+            BackgroundColour = Color.White;
 
-            
+            Nuggie1 = new NuggieShape(new Vector2(30, 30), new Vector2(40, 40), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(60, 36), new Vector2(12, 413), "lol");
 
             Player1 = new Shape2D(new Vector2(10, 10), new Vector2(20, 20), "Test");
         }

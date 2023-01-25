@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 namespace ExpressedEngine.ExpressedEngine
-{ 
+{
 public class Sprite2D
 {
         public Vector2 postition = null;
