@@ -17,6 +17,7 @@ namespace ExpressedEngine
         bool right;
         bool up;
         bool down;
+        bool P;
 
         public DemoGame() : base(new Vector2(815,715),"Expressed Engine Demo"){}
 
@@ -54,7 +55,37 @@ namespace ExpressedEngine
             {
                 Player1.postition.X += 5f;
             }
+            if (P)
+            {
+                Console.WriteLine("What is the capital of France? ");
+                Console.WriteLine("A. Paris");
+                Console.WriteLine("B. London");
+                Console.WriteLine("C. Rome");
+
+                string userAnswer = Console.ReadLine();
+
+                if (userAnswer == "A" || userAnswer == "a")
+                {
+                    Console.WriteLine("Correct! The capital of France is Paris.");
+                }
+                else if (userAnswer == "B" || userAnswer == "b")
+                {
+                    Console.WriteLine("Incorrect. The capital of France is not London.");
+                }
+                else if (userAnswer == "C" || userAnswer == "c")
+                {
+                    Console.WriteLine("Incorrect. The capital of France is not Rome.");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid answer. Please select A, B or C.");
+                    return;
+                }
+            }
+
+
         }
+        
 
         
 
@@ -64,6 +95,7 @@ namespace ExpressedEngine
            if (e.KeyCode == Keys.S) { down = true; }
            if (e.KeyCode == Keys.A) { left  = true; }
            if (e.KeyCode == Keys.D) { right = true; }
+           if (e.KeyCode == Keys.E) { P = true;  }
         }
 
         public override void GetKeyUp(KeyEventArgs e)
@@ -72,6 +104,7 @@ namespace ExpressedEngine
             if (e.KeyCode == Keys.S) { down = false; }
             if (e.KeyCode == Keys.A) { left = false; }
             if (e.KeyCode == Keys.D) { right = false; }
+            if (e.KeyCode == Keys.E) { P = false; }
         }
     }
 }
