@@ -19,21 +19,40 @@ namespace ExpressedEngine
         bool up;
         bool down;
 
-        public DemoGame() : base(new Vector2(815,715),"Expressed Engine Demo"){}
+        public DemoGame() : base(new Vector2(615,520),"Expressed Engine Demo"){}
 
         public override void Onload()
         {
             BackgroundColour = Color.White;
 
-            Nuggie1 = new NuggieShape(new Vector2(30, 30), new Vector2(40, 40), "lol");
-            Nuggie1 = new NuggieShape(new Vector2(60, 36), new Vector2(12, 413), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(40, 40), new Vector2(40, 240), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(120, 40), new Vector2(160, 40), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(240, 0), new Vector2(40, 40), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(80, 120), new Vector2(240, 40), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(80, 200), new Vector2(280, 40), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(160, 40), new Vector2(160, 40), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(360, 40), new Vector2(40, 280), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(400, 120), new Vector2(80, 40), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(440, 200), new Vector2(80, 40), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(440, 0), new Vector2(40, 120), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(520, 40), new Vector2(40, 440), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(120, 280), new Vector2(200, 40), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(120, 320), new Vector2(40, 160), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(40, 320), new Vector2(40, 120), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(440, 200), new Vector2(120, 40), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(200, 400), new Vector2(360, 40), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(440, 280), new Vector2(40, 120), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(360, 360), new Vector2(40, 40), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(280, 320), new Vector2(40, 40), "lol");
+            Nuggie1 = new NuggieShape(new Vector2(200, 360), new Vector2(40, 40), "lol");
+
+            Nuggie1 = new NuggieShape(new Vector2(490, 450), new Vector2(20, 20), "door");
 
             Player1 = new Shape2D(new Vector2(10, 10), new Vector2(20, 20), "Test");
         }
 
         public override void OnDraw()
         {
-
         }
         
         float x = 0.1f;
@@ -56,6 +75,8 @@ namespace ExpressedEngine
             {
                 Player1.postition.X += 5f;
             }
+
+
         }
 
         

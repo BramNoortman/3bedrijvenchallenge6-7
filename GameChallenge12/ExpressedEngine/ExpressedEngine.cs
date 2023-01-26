@@ -154,13 +154,13 @@ namespace ExpressedEngine.ExpressedEngine
     }
     public abstract class ExpressedEngine
     {
-        private Vector2 ScreenSize = new Vector2(512, 512);
+        private Vector2 ScreenSize = new Vector2(512, 480);
         private string Title = "New Game";
         private Canvas Window = null;
         private Thread GameLoopThread = null;
 
         private static List<Shape2D> AllShapes = new List<Shape2D>();
-        private static List<NuggieShape> NuggieShapes = new List<NuggieShape>();
+        protected static List<NuggieShape> NuggieShapes = new List<NuggieShape>();
         private static List<Sprite2D> AllSprites = new List<Sprite2D>();
 
         public Color BackgroundColour = Color.Beige;
@@ -226,18 +226,18 @@ namespace ExpressedEngine.ExpressedEngine
 
             Onload();
             while (GameLoopThread.IsAlive) {
-
                 try
                 {
                     OnDraw();
                     Window.BeginInvoke((MethodInvoker)delegate { Window.Refresh(); });
+  
                     OnUpdate();
-                    Thread.Sleep(1);
+                    Thread.Sleep(10);
                 }
                 catch 
                 {
                     Log.Error("Game Has Not Been Found");
-                    
+
                 }
             }
         }
@@ -262,9 +262,6 @@ namespace ExpressedEngine.ExpressedEngine
             {
                 g.DrawImage(Sprite.Sprite, Sprite.postition.X, Sprite.postition.Y, Sprite.Scale.X, Sprite.Scale.Y);
             }
-
-
-
         }
 
         public abstract void Onload();
