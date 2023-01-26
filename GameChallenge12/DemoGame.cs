@@ -57,33 +57,37 @@ namespace ExpressedEngine
             }
             if (P)
             {
-                Console.WriteLine("What is the capital of France? ");
-                Console.WriteLine("A. Paris");
-                Console.WriteLine("B. London");
-                Console.WriteLine("C. Rome");
+                
+                bool isCorrect = false;
 
-                string userAnswer = Console.ReadLine();
+                while (!isCorrect)
+                {
+                    Console.WriteLine("What is the capital of France? ");
+                    Console.WriteLine("A. Paris");
+                    Console.WriteLine("B. London");
+                    Console.WriteLine("C. Rome");
 
-                if (userAnswer == "A" || userAnswer == "a")
-                {
-                    Console.WriteLine("Correct! The capital of France is Paris.");
+                    string userAnswer = Console.ReadLine();
+
+                    switch (userAnswer.ToUpper())
+                    {
+                        case "A":
+                            Console.WriteLine("Correct! The capital of France is Paris.");
+                            isCorrect = true;
+                            break;
+                        case "B":
+                            Console.WriteLine("Incorrect. The capital of France is not London.");
+                            break;
+                        case "C":
+                            Console.WriteLine("Incorrect. The capital of France is not Rome.");
+                            break;
+                        default:
+                            Console.WriteLine("Invalid answer. Please select A, B or C.");
+                            break;
+                    }
                 }
-                else if (userAnswer == "B" || userAnswer == "b")
-                {
-                    Console.WriteLine("Incorrect. The capital of France is not London.");
-                }
-                else if (userAnswer == "C" || userAnswer == "c")
-                {
-                    Console.WriteLine("Incorrect. The capital of France is not Rome.");
-                }
-                else
-                {
-                    Console.WriteLine("Invalid answer. Please select A, B or C.");
-                    return;
-                }
+
             }
-
-
         }
         
 
