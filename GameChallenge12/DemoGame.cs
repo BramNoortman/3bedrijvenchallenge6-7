@@ -18,6 +18,7 @@ namespace ExpressedEngine
         bool right;
         bool up;
         bool down;
+        bool interact;
 
         public DemoGame() : base(new Vector2(615,520),"Expressed Engine Demo"){}
 
@@ -55,8 +56,8 @@ namespace ExpressedEngine
         {
         }
         
-        float x = 0.1f;
-        float y = 0.1f;
+        //float x = 0.1f;
+        //float y = 0.1f;
         public override void OnUpdate()
         {
             if (up)
@@ -75,8 +76,36 @@ namespace ExpressedEngine
             {
                 Player1.postition.X += 5f;
             }
+            if (interact)
+            {//if (Player1.IntersectsWith(Nuggie1))
+                //{
+                    Console.WriteLine("What is the capital of France? ");
+                    Console.WriteLine("A. Paris");
+                    Console.WriteLine("B. London");
+                    Console.WriteLine("C. Rome");
 
+                    string userAnswer = Console.ReadLine();
 
+                    if (userAnswer == "A" || userAnswer == "a")
+                    {
+                        Console.WriteLine("Correct! The capital of France is Paris.");
+                        
+                    }
+                    else if (userAnswer == "B" || userAnswer == "b")
+                    {
+                        Console.WriteLine("Incorrect. The capital of France is not London.");
+                    }
+                    else if (userAnswer == "C" || userAnswer == "c")
+                    {
+                        Console.WriteLine("Incorrect. The capital of France is not Rome.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid answer. Please select A, B or C.");
+                        return;
+                    }
+                //}
+            }
         }
 
         
@@ -87,6 +116,8 @@ namespace ExpressedEngine
            if (e.KeyCode == Keys.S) { down = true; }
            if (e.KeyCode == Keys.A) { left  = true; }
            if (e.KeyCode == Keys.D) { right = true; }
+           if (e.KeyCode == Keys.E) { interact = true; }
+
         }
 
         public override void GetKeyUp(KeyEventArgs e)
@@ -95,6 +126,7 @@ namespace ExpressedEngine
             if (e.KeyCode == Keys.S) { down = false; }
             if (e.KeyCode == Keys.A) { left = false; }
             if (e.KeyCode == Keys.D) { right = false; }
+            if (e.KeyCode == Keys.E) { interact = false; }
         }
     }
 }
