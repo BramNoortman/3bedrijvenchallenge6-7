@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Threading; 
+using System.Threading;
 
 namespace ExpressedEngine.ExpressedEngine
 {
@@ -161,7 +161,8 @@ namespace ExpressedEngine.ExpressedEngine
 
         private static List<Shape2D> AllShapes = new List<Shape2D>();
         protected static List<NuggieShape> NuggieShapes = new List<NuggieShape>();
-        private static List<Sprite2D> AllSprites = new List<Sprite2D>();
+        private static List<Sprite2D> AllSprites = new List<Sprite2D>(); 
+        private static List<Collision> Collisions = new List<Collision>();
 
         public Color BackgroundColour = Color.Beige;
 
@@ -203,6 +204,10 @@ namespace ExpressedEngine.ExpressedEngine
         {
             NuggieShapes.Add(shape);
         }
+        public static void RegisterShape(Collision collision)
+        {
+            Collisions.Add(collision);
+        }
         public static void RegisterSprite(Sprite2D Sprite)
         {
             AllSprites.Add(Sprite);
@@ -220,7 +225,15 @@ namespace ExpressedEngine.ExpressedEngine
         {
             AllSprites.Remove(Sprite);
         }
+        public static void UnRegisterShape(Collision collision)
+        {
+            Collisions.Remove(collision);
+        }
 
+        public static void collisiondetect()
+        {
+
+        }
         void GameLoop()
         {
 
@@ -237,7 +250,7 @@ namespace ExpressedEngine.ExpressedEngine
                 catch 
                 {
                     Log.Error("Game Has Not Been Found");
-
+                    break;               
                 }
             }
         }
@@ -252,7 +265,7 @@ namespace ExpressedEngine.ExpressedEngine
 
             foreach (Shape2D Shape in AllShapes)
             {
-                g.FillEllipse(new SolidBrush(Color.SeaGreen),Shape.postition.X,Shape.postition.Y,Shape.Scale.X,Shape.Scale.Y);
+                g.FillRectangle(new SolidBrush(Color.SeaGreen),Shape.postition.X,Shape.postition.Y,Shape.Scale.X,Shape.Scale.Y);
             }
             foreach (NuggieShape Shape in NuggieShapes)
             {
@@ -262,6 +275,11 @@ namespace ExpressedEngine.ExpressedEngine
             {
                 g.DrawImage(Sprite.Sprite, Sprite.postition.X, Sprite.postition.Y, Sprite.Scale.X, Sprite.Scale.Y);
             }
+            foreach (Collision collision in Collisions)
+            {
+                g.FillRectangle(new SolidBrush(Color.Red), collision.postition.X, collision.postition.Y, collision.Scale.X, collision.Scale.Y);
+            }
+
         }
 
         public abstract void Onload();

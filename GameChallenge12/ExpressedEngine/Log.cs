@@ -32,5 +32,12 @@ namespace ExpressedEngine.ExpressedEngine
             Console.WriteLine($"[ERROR] - {msg}");
             Console.ForegroundColor = ConsoleColor.White;
         }
+        public static void Detection(string msg)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"[detection] - {msg}");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+        
     }
 }

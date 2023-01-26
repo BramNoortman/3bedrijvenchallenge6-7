@@ -13,11 +13,13 @@ namespace ExpressedEngine
     {
         Shape2D Player1;
         NuggieShape Nuggie1;
+        Collision collision1;
 
         bool left;
         bool right;
         bool up;
         bool down;
+        bool interact;
 
         public DemoGame() : base(new Vector2(615,520),"Expressed Engine Demo"){}
 
@@ -48,7 +50,9 @@ namespace ExpressedEngine
 
             Nuggie1 = new NuggieShape(new Vector2(490, 450), new Vector2(20, 20), "door");
 
-            Player1 = new Shape2D(new Vector2(10, 10), new Vector2(20, 20), "Test");
+            collision1 = new Collision(new Vector2(490, 450), new Vector2(20, 20), "collisiontest");
+
+            Player1 = new Shape2D(new Vector2(570, 450), new Vector2(20, 20), "player");
         }
 
         public override void OnDraw()
@@ -75,19 +79,42 @@ namespace ExpressedEngine
             {
                 Player1.postition.X += 5f;
             }
+            if (interact)
+            {
+                Console.WriteLine("What is the capital of France? ");
+                Console.WriteLine("A. Paris");
+                Console.WriteLine("B. London");
+                Console.WriteLine("C. Rome");
 
-            
+                string userAnswer = Console.ReadLine();
 
+                if (userAnswer == "A" || userAnswer == "a")
+                {
+                    Console.WriteLine("Correct! The capital of France is Paris.");
+
+                }
+                else if (userAnswer == "B" || userAnswer == "b")
+                {
+                    Console.WriteLine("Incorrect. The capital of France is not London.");
+                }
+                else if (userAnswer == "C" || userAnswer == "c")
+                {
+                    Console.WriteLine("Incorrect. The capital of France is not Rome.");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid answer. Please select A, B or C.");
+                    return;
+                }
+            }
         }
-
-        
-
         public override void GetKeyDown(KeyEventArgs e)
         {
            if (e.KeyCode == Keys.W) { up = true; }
            if (e.KeyCode == Keys.S) { down = true; }
            if (e.KeyCode == Keys.A) { left  = true; }
            if (e.KeyCode == Keys.D) { right = true; }
+           if (e.KeyCode == Keys.E){ interact = true; }
         }
 
         public override void GetKeyUp(KeyEventArgs e)
@@ -96,6 +123,8 @@ namespace ExpressedEngine
             if (e.KeyCode == Keys.S) { down = false; }
             if (e.KeyCode == Keys.A) { left = false; }
             if (e.KeyCode == Keys.D) { right = false; }
+            if (e.KeyCode == Keys.E){ interact = false; }
         }
+
     }
 }
