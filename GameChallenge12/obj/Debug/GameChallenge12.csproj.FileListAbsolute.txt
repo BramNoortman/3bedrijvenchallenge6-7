@@ -1,0 +1,10 @@
+C:\Users\stijn\Documents\Software Dev\3bedrijvenchallenge6-7\GameChallenge12\obj\Debug\GameChallenge12.csproj.AssemblyReference.cache
+C:\Users\stijn\Documents\Software Dev\3bedrijvenchallenge6-7\GameChallenge12\obj\Debug\GameChallenge12.csproj.SuggestedBindingRedirects.cache
+C:\Users\stijn\Documents\Software Dev\3bedrijvenchallenge6-7\GameChallenge12\obj\Debug\ExpressedEngine.ExpressedEngine.Canvas.resources
+C:\Users\stijn\Documents\Software Dev\3bedrijvenchallenge6-7\GameChallenge12\obj\Debug\GameChallenge12.csproj.GenerateResource.cache
+C:\Users\stijn\Documents\Software Dev\3bedrijvenchallenge6-7\GameChallenge12\obj\Debug\GameChallenge12.csproj.CoreCompileInputs.cache
+C:\Users\stijn\Documents\Software Dev\3bedrijvenchallenge6-7\GameChallenge12\bin\Debug\GameChallenge12.exe.config
+C:\Users\stijn\Documents\Software Dev\3bedrijvenchallenge6-7\GameChallenge12\bin\Debug\GameChallenge12.exe
+C:\Users\stijn\Documents\Software Dev\3bedrijvenchallenge6-7\GameChallenge12\bin\Debug\GameChallenge12.pdb
+C:\Users\stijn\Documents\Software Dev\3bedrijvenchallenge6-7\GameChallenge12\obj\Debug\GameChallenge12.exe
+C:\Users\stijn\Documents\Software Dev\3bedrijvenchallenge6-7\GameChallenge12\obj\Debug\GameChallenge12.pdb
